@@ -1,5 +1,5 @@
 {
-  "name": "react-native-contacts-select",
+  "name": "react-native-contacts",
   "version": "0.0.1",
   "description": "receiving contact from the phonebook",
   "main": "index.js",
