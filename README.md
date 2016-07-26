@@ -43,3 +43,17 @@ public class MainApplication extends Application implements ReactApplication  {
   <uses-permission android:name="android.permission.READ_CONTACTS" />
 ...
 ```
+## Usage Example
+
+```js
+import Contacts from 'react-native-contacts-android';
+
+Contacts.picker((contact) => {
+
+  if(contact.resultCode != 0){
+    console.log(contact.name);
+    console.log(contact.phones);
+  }
+
+})
+```
