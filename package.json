@@ -1,6 +1,6 @@
 {
   "name": "react-native-contacts",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "receiving contact from the phonebook",
   "main": "index.js",
   "scripts": {

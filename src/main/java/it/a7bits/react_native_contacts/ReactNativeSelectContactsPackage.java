@@ -1,4 +1,4 @@
-package it.a7bits.react_native_contacts_select;
+package it.a7bits.react_native_contacts;
 
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.JavaScriptModule;
