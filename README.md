@@ -7,7 +7,7 @@ receiving contact from the phonebook
 ```gradle
     ...
     include ':react-native-contacts-android'
-    project(':react-select-contacts-android').projectDir = new File(settingsDir, '../node_modules/react-native-contacts-android')
+    project(':react-native-contacts-android').projectDir = new File(settingsDir, '../node_modules/react-native-contacts-android')
 ```
 
 * In `android/app/build.gradle`
