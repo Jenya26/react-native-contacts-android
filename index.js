@@ -1,3 +1,4 @@
-modules.export = function() {
-	console.log('stub');
-}
+'use strict';
+
+import { NativeModules } from 'react-native';
+module.exports = NativeModules.SelectContacts;
