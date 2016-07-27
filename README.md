@@ -46,9 +46,9 @@ public class MainApplication extends Application implements ReactApplication  {
 ## Usage Example
 
 ```js
-import Contacts from 'react-native-contacts-android';
+import SelectContacts from 'react-native-contacts-android';
 
-Contacts.picker((contact) => {
+SelectContacts.picker((contact) => {
 
   if(contact.resultCode != 0){
     console.log(contact.name);
