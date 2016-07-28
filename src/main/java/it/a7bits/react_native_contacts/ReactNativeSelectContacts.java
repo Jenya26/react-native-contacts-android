@@ -45,7 +45,7 @@ public class ReactNativeSelectContacts extends ReactContextBaseJavaModule implem
 
     @Override
     public String getName() {
-        return "SelectContactsAndroid";
+        return "SelectContacts";
     }
 
     @Override
