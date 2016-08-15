@@ -1,8 +1,10 @@
 package ru.getintime.react_native_contacts_android;
 
 import android.app.Activity;
+import android.content.ContentResolver;
 import android.content.Intent;
 import android.database.Cursor;
+import android.net.Uri;
 import android.provider.ContactsContract;
 
 import com.facebook.react.bridge.ActivityEventListener;
@@ -71,6 +73,8 @@ public class ReactNativeSelectContacts extends ReactContextBaseJavaModule implem
                 WritableMap phone;
                 while(cursorPhones.moveToNext()){
                     phone = Arguments.createMap();
+                    phone.putString("id",cursorPhones.getString(cursorPhones.getColumnIndex(
+                            ContactsContract.CommonDataKinds.Phone._ID)));
                     phone.putString("number",cursorPhones.getString(cursorPhones.getColumnIndex(
                             ContactsContract.CommonDataKinds.Phone.NUMBER)));
                     phones.pushMap(phone);
