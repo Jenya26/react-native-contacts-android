@@ -51,6 +51,7 @@ import SelectContacts from 'react-native-contacts-android';
 SelectContacts.picker((contact) => {
 
   if(contact.resultCode != 0){
+    console.log(contact.id);
     console.log(contact.name);
     console.log(contact.phones);
   }
