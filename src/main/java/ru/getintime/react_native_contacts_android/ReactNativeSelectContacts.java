@@ -58,18 +58,22 @@ public class ReactNativeSelectContacts extends ReactContextBaseJavaModule implem
         }
         Cursor cursor = callbacks.get(requestCode).getActivity().getContentResolver().query(data.getData(),null,null,null,null);
         if(cursor.moveToNext()) {
+            contact.putString("id",cursor.getString(cursor.getColumnIndex(ContactsContract.Contacts._ID)));
             contact.putString("name",cursor.getString(cursor.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME)));
             WritableArray phones = new WritableNativeArray();
             if(cursor.getString(cursor.getColumnIndex(ContactsContract.Contacts.HAS_PHONE_NUMBER)).equalsIgnoreCase("1")) {
                 Cursor cursorPhones = callbacks.get(requestCode).getActivity().getContentResolver().query(
                         ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
                         null,
-                        ContactsContract.CommonDataKinds.Phone.CONTACT_ID + " = " + cursor.getString(cursor.getColumnIndex(ContactsContract.Contacts._ID)),
+                        ContactsContract.CommonDataKinds.Phone.CONTACT_ID + " = " + contact.getString("id"),
                         null,
                         null);
+                WritableMap phone;
                 while(cursorPhones.moveToNext()){
-                    phones.pushString(cursorPhones.getString(cursorPhones.getColumnIndex(
+                    phone = Arguments.createMap();
+                    phone.putString("number",cursorPhones.getString(cursorPhones.getColumnIndex(
                             ContactsContract.CommonDataKinds.Phone.NUMBER)));
+                    phones.pushMap(phone);
                 }
                 contact.putArray("phones", phones);
             }
