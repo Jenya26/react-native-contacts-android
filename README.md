@@ -21,7 +21,7 @@ dependencies {
 
 * register module (in android/app/src/main/java/[your-app-namespace]/MainActivity.java)
 ```java
-import it.a7bits.react_native_contacts.ReactNativeSelectContactsPackage; // <------ add import
+import ru.getintime.react_native_contacts_android.ReactNativeSelectContactsPackage; // <------ add import
 
 public class MainApplication extends Application implements ReactApplication  {
 
