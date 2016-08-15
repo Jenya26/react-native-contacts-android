@@ -1,4 +1,4 @@
-# react-native-contacts-select
+# react-native-contacts-android 
 receiving contact from the phonebook
 
 ## Install
