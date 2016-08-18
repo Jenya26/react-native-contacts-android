@@ -9,13 +9,9 @@ import com.facebook.react.uimanager.ViewManager;
 import java.util.*;
 
 public class ReactNativeSelectContactsPackage implements ReactPackage{
-
-    private ReactNativeSelectContacts selectContacts;
-
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
-        selectContacts = new ReactNativeSelectContacts(reactContext);
-        return Arrays.<NativeModule>asList(selectContacts);
+        return Arrays.<NativeModule>asList(new ReactNativeSelectContacts(reactContext));
     }
 
     @Override
